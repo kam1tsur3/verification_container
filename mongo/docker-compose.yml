@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    php:
+        build: ./php-apache
+        ports:
+         - 1080:80
+        volumes:
+            - ./www/html:/var/www/html
+        depends_on:
+            - mongo
+    
+    mongo:
+        image: mongo
+        restart: always
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: km2
+            MONGO_INITDB_ROOT_PASSWORD: km2pass
