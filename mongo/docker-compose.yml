@@ -14,5 +14,5 @@ services:
         image: mongo
         restart: always
         environment:
-            MONGO_INITDB_ROOT_USERNAME: km2
-            MONGO_INITDB_ROOT_PASSWORD: km2pass
+            MONGO_INITDB_ROOT_USERNAME: testuser
+            MONGO_INITDB_ROOT_PASSWORD: testpass
