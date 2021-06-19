@@ -7,14 +7,14 @@
 $ docker-compose up -d
 ```
 
-* composerでのinstall
+* composerでのinstall  
 php-apacheのDockerfileにコマンド書いたんだが、失敗してるっぽい？
 起動後直接叩いてあげて
 ```
 $ composer reqruire mongodb/mongodb
 ```
 
-* 検証コード
+* 検証コード  
 ./www/htmlに適当に置いてdocker-composeするといい
 別に起動後ファイル作ってもいいけど
 
