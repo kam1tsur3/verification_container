@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    php:
+        build: ./php-apache
+        ports:
+            - 30080:80
+        volumes:
+            - ./www/html:/var/www/html
+        depends_on:
+            - ldap
+    
+    ldap:
+        image: osixia/openldap:latest
+        restart: always
+        environment:
+            LDAP_ORGANISATION: "LDAP Test.org"
+            LDAP_DOMAIN: "ldap.domain"
+            LDAP_ADMIN_PASSWORD: "ldappasswd"
+    
+    ldap-admin:
+        image: osixia/phpldapadmin:latest
+        restart: always
+        environment:
+            PHPLDAPADMIN_LDAP_HOSTS: "ldap"
+            PHPLDAPADMIN_HTTPS: "false"
+        ports:
+            - 31080:80
